@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1565C0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Risk Battle Roller</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>⚔️ Risk Battle Roller</h1>
+        </header>
+
+        <!-- Attacker Section -->
+        <section class="attacker-section">
+            <h2>Attacker</h2>
+            <div class="dice-count-buttons">
+                <button class="dice-count-btn attacker-btn" data-count="1">1</button>
+                <button class="dice-count-btn attacker-btn" data-count="2">2</button>
+                <button class="dice-count-btn attacker-btn" data-count="3">3</button>
+            </div>
+            <div class="dice-container" id="attackerDice">
+                <div class="dice" id="attackerDice1">1</div>
+                <div class="dice" id="attackerDice2">1</div>
+                <div class="dice" id="attackerDice3">1</div>
+            </div>
+        </section>
+
+        <!-- Battle Button Section -->
+        <section class="battle-section">
+            <button id="battleButton" class="battle-btn">⚔️ BATTLE! ⚔️</button>
+            <div id="resultText" class="result-text"></div>
+        </section>
+
+        <!-- Defender Section -->
+        <section class="defender-section">
+            <h2>Defender</h2>
+            <div class="dice-count-buttons">
+                <button class="dice-count-btn defender-btn" data-count="1">1</button>
+                <button class="dice-count-btn defender-btn" data-count="2">2</button>
+            </div>
+            <div class="dice-container" id="defenderDice">
+                <div class="dice" id="defenderDice1">1</div>
+                <div class="dice" id="defenderDice2">1</div>
+            </div>
+        </section>
+
+        <!-- Casualties Section -->
+        <section class="casualties-section">
+            <div id="casualtiesText" class="casualties-text">
+                Total - Attacker: 0 | Defender: 0
+            </div>
+            <button id="resetButton" class="reset-btn">Reset Casualties</button>
+        </section>
+
+        <!-- History Section -->
+        <section class="history-section">
+            <button id="historyButton" class="history-btn">📜 Battle History</button>
+        </section>
+
+        <!-- History Overlay -->
+        <div id="historyOverlay" class="history-overlay">
+            <div class="history-content">
+                <h2>Battle History</h2>
+                <div id="historyText" class="history-text">
+                    No battles yet. Start rolling!
+                </div>
+                <button id="closeHistoryButton" class="close-history-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
