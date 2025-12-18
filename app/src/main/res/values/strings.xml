@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Risk Battle Roller</string>
+    <string name="attacker">ATTACKER</string>
+    <string name="defender">DEFENDER</string>
+    <string name="one_die">1</string>
+    <string name="two_dice">2</string>
+    <string name="three_dice">3</string>
+    <string name="battle">BATTLE!</string>
+    <string name="reset">Reset</string>
+    <string name="history">History</string>
+    <string name="battle_history">Battle History</string>
+    <string name="no_battles_yet">No battles yet. Start rolling!</string>
+    <string name="close">Close</string>
+    <string name="attacker_die_1">Attacker Die 1</string>
+    <string name="attacker_die_2">Attacker Die 2</string>
+    <string name="attacker_die_3">Attacker Die 3</string>
+    <string name="defender_die_1">Defender Die 1</string>
+    <string name="defender_die_2">Defender Die 2</string>
+    <string name="casualties_initial">Attacker: 0 | Defender: 0</string>
+</resources>
