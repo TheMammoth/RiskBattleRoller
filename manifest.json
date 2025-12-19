@@ -1,0 +1,34 @@
+{
+  "name": "Risk Battle Roller",
+  "short_name": "Risk Dice",
+  "description": "Roll dice for Risk board game battles",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#f5f5f5",
+  "theme_color": "#d32f2f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "utilities"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Quick Roll",
+      "short_name": "Roll",
+      "description": "Start rolling dice immediately",
+      "url": "/",
+      "icons": [
+        {
+          "src": "icon.svg",
+          "sizes": "any"
+        }
+      ]
+    }
+  ]
+}

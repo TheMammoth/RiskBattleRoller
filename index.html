@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d32f2f">
+    <meta name="description" content="Risk Battle Dice Roller - Roll dice for Risk board game battles">
+    <title>Risk Battle Roller</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Attacker Section -->
+        <div class="attacker-section" id="attackerSection">
+            <h1 class="section-title">ATTACKER</h1>
+
+            <div class="dice-selection">
+                <button class="dice-btn" data-side="attacker" data-count="1">1</button>
+                <button class="dice-btn active" data-side="attacker" data-count="2">2</button>
+                <button class="dice-btn" data-side="attacker" data-count="3">3</button>
+            </div>
+
+            <div class="dice-container" id="attackerDice">
+                <div class="dice" data-index="0">
+                    <img src="dice/dice1.svg" alt="Dice 1">
+                </div>
+                <div class="dice" data-index="1">
+                    <img src="dice/dice1.svg" alt="Dice 1">
+                </div>
+                <div class="dice hidden" data-index="2">
+                    <img src="dice/dice1.svg" alt="Dice 1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="middle-section">
+            <div class="casualties-container">
+                <div class="casualty-box attacker-casualty">
+                    <div class="casualty-label">Attacker Casualties</div>
+                    <div class="casualty-count" id="attackerCasualties">0</div>
+                </div>
+                <div class="casualty-box defender-casualty">
+                    <div class="casualty-label">Defender Casualties</div>
+                    <div class="casualty-count" id="defenderCasualties">0</div>
+                </div>
+            </div>
+
+            <button class="roll-btn" id="rollBtn">ROLL DICE</button>
+
+            <div class="result-text" id="resultText"></div>
+
+            <div class="bottom-buttons">
+                <button class="action-btn" id="resetBtn">RESET</button>
+                <button class="action-btn" id="historyBtn">HISTORY</button>
+            </div>
+        </div>
+
+        <!-- Defender Section -->
+        <div class="defender-section" id="defenderSection">
+            <h1 class="section-title">DEFENDER</h1>
+
+            <div class="dice-selection">
+                <button class="dice-btn" data-side="defender" data-count="1">1</button>
+                <button class="dice-btn active" data-side="defender" data-count="2">2</button>
+            </div>
+
+            <div class="dice-container" id="defenderDice">
+                <div class="dice" data-index="0">
+                    <img src="dice/dice1.svg" alt="Dice 1">
+                </div>
+                <div class="dice" data-index="1">
+                    <img src="dice/dice1.svg" alt="Dice 1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Overlay -->
+    <div class="history-overlay hidden" id="historyOverlay">
+        <div class="history-content">
+            <div class="history-header">
+                <h2>Battle History</h2>
+                <button class="close-btn" id="closeHistoryBtn">&times;</button>
+            </div>
+            <div class="history-list" id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
