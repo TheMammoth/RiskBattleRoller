@@ -7,7 +7,8 @@
       "Bash(dir:*)",
       "Bash(tree:*)",
       "Bash(ls:*)",
-      "Bash(cmd.exe /c gradlew.bat assembleDebug)"
+      "Bash(cmd.exe /c gradlew.bat assembleDebug)",
+      "Bash(cmd.exe /c \"dir /s /b *.kt *.java\")"
     ]
   }
 }

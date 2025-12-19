@@ -10,28 +10,35 @@ data class BattleResult(
 
 class DiceRoller {
     fun calculateBattle(attackerValues: List<Int>, defenderValues: List<Int>): BattleResult {
-        // Sort in descending order (highest first)
-        val attackerSorted = attackerValues.sortedDescending()
-        val defenderSorted = defenderValues.sortedDescending()
+        // Create pairs of (value, originalIndex) and sort by value descending
+        val attackerIndexed = attackerValues.mapIndexed { index, value -> value to index }
+            .sortedByDescending { it.first }
+        val defenderIndexed = defenderValues.mapIndexed { index, value -> value to index }
+            .sortedByDescending { it.first }
 
-        val attackerWins = MutableList(attackerSorted.size) { false }
-        val defenderWins = MutableList(defenderSorted.size) { false }
+        val attackerWins = MutableList(attackerValues.size) { false }
+        val defenderWins = MutableList(defenderValues.size) { false }
 
         var attackerLosses = 0
         var defenderLosses = 0
 
-        val comparisons = minOf(attackerSorted.size, defenderSorted.size)
+        val comparisons = minOf(attackerIndexed.size, defenderIndexed.size)
 
         for (i in 0 until comparisons) {
-            if (attackerSorted[i] > defenderSorted[i]) {
+            val attackerValue = attackerIndexed[i].first
+            val attackerOriginalIndex = attackerIndexed[i].second
+            val defenderValue = defenderIndexed[i].first
+            val defenderOriginalIndex = defenderIndexed[i].second
+
+            if (attackerValue > defenderValue) {
                 defenderLosses++
-                attackerWins[i] = true
-                defenderWins[i] = false
+                attackerWins[attackerOriginalIndex] = true
+                defenderWins[defenderOriginalIndex] = false
             } else {
                 // Ties favor defender in Risk
                 attackerLosses++
-                attackerWins[i] = false
-                defenderWins[i] = true
+                attackerWins[attackerOriginalIndex] = false
+                defenderWins[defenderOriginalIndex] = true
             }
         }
 
